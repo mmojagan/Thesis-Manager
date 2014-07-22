@@ -1,0 +1,98 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>View</title>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/thesis.css" />
+	<link type="text/css" rel="stylesheet" href="/stylesheets/jquery.toastmessage-min.css" />
+    <script language="javascript" type="text/javascript" src="/js/jquery-1.5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/jquery.toastmessage-min.js"></script>
+	<script language="javascript" type="text/javascript" src="/js/thesisview.js"></script>
+	
+</head>
+<body>
+<img alt="full screen background image" src="/img/web_bg.jpg" id="full-screen-background-image" />
+
+<div class="navbar navbar-inverse navbar-fixed-top"> 
+  <div class="container">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-
+target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+  <div class="navbar-collapse collapse" id="navbar-main">
+    <ul class="nav navbar-nav">
+      <li><a class="nav navbar-nav" href="/">Thesis Manager</a></li>
+
+      <li class="drop2"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Advisers
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/adviser/new">Create</a></li>
+      <li><a href="/adviser/list">View All</a></li>
+      </ul>
+      </li>
+
+      <li class="drop3"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Students
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/student/new">Create</a></li>
+      <li><a href="/student/list">View All</a></li>
+      </ul>
+      </li>
+
+      <li class="drop4"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Theses
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/thesis/new">Create</a></li>
+      <li><a href="/thesis/list">View All</a></li>
+      </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+    <li class="drop1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Developers Profile
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/module-1/1">Mark Kelvin Mojagan</a></li>
+      <li><a href="/module-1/2">Raph Dumape</a></li>
+      <li class="divider"></li>
+      <li><a class="nav navbar-nav" href="{{ url|safe }}">{{ url_linktext }}</a></li>
+      </ul>
+      </li>
+    </ul>
+    </div>
+    </div>
+  </div>
+
+ {% for thesisquery in thesisquery %}
+ {% if thesisquery.key.id() == id %} 
+<div class="container">
+	<div class="bs-docs-section">
+			<div class="row">
+			<div class="col-lg-8 col-xs-push-2">
+				<div class="bs-component">
+				<div class="jumbotron">
+				    <p class="alert alert-dismissable alert-success"><strong>{{thesisquery.Thesis_title}}</strong><br>{{thesisquery.date1}}, {{thesisquery.status}}</p>
+            <a href="/thesis/edit/{{thesisquery.key.id()}}">Edit</a>
+				    <hr>
+				    <p style="font-size: 18px;" class="text-info">{{thesisquery.description}}</p>
+					{% endif %}
+  {% endfor %}
+</div>
+		
+				<a style="margin-bottom: 100px;" class="btn btn-success" href="/thesis/new">Add New Thesis</a>
+				<a style="margin-bottom: 100px;" class="btn btn-warning" href="/thesis/list">View All Thesis</a>
+
+		<div class="toast-container toast-position-top-center"></div> 
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	
+</body>
+</html>
