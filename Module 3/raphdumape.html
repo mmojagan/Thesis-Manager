@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<head>
+	<title>Dumape, Raph Silvestre</title>
+  <link rel="shortcut icon" href="/img/2.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="/stylesheets/screen.css" type="text/css"/>
+  <link rel="stylesheet" href="/stylesheets/navbar.css" type="text/css"/>
+  <script language="javascript" type="text/javascript" src="/js/jquery-1.5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="/js/thesisview.js"></script>
+	
+</head>
+<body background="/img/profilebg.jpg" alt="Raph Dumape">
+
+<div class="navbar navbar-inverse navbar-fixed-top"> 
+  <div class="container">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-
+target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+  <div class="navbar-collapse collapse" id="navbar-main">
+    <ul class="nav navbar-nav">
+      <li><a class="nav navbar-nav" href="/">Thesis Manager</a></li>
+
+      <li class="drop2"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Advisers
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/adviser/new">Create</a></li>
+      <li><a href="/adviser/list">View All</a></li>
+      </ul>
+      </li>
+
+      <li class="drop3"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Students
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/student/new">Create</a></li>
+      <li><a href="/student/list">View All</a></li>
+      </ul>
+      </li>
+
+      <li class="drop4"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Theses
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/thesis/new">Create</a></li>
+      <li><a href="/thesis/list">View All</a></li>
+      </ul>
+      </li>
+    
+
+    <li class="drop5"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer's Profile
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/module-1/1">Mark Kelvin Mojagan</a></li>
+      <li><a href="/module-1/2">Raph Dumape</a></li>
+      </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a class="nav navbar-nav" href="{{ url|safe }}">{{ url_linktext }}</a></li>
+    </ul>
+    </div>
+    </div>
+  </div>
+
+{% if user_name %}
+
+  <div style="margin-top: 50px;">
+
+	<br>
+<div class="page">
+  <div class="header"><center><img src="/img/header2.jpg" height="200px" width="100%" style="position:relative"></center></div>
+
+ 
+<img style="position:absolute; left:280px; top:230px; border:6px double #545565;" src="/img/pogi.jpg" width="200px"height="200px" >
+<div class="tagline col-lg-8 col-lg-push-3">
+  <br>
+  <div> <p style="font-family:Arial; font-size:18px; color:white"><em><strong>"In order to succeed, you must first believe that you can."</strong></em></p> </div>
+<div>
+<p style="font-family:Calibri; font-size:18px; color:white">
+<strong>Engr. Raph S. Dumape</strong>
+<br>Basketball Player/Engineering Student
+<br>February 18, 1993 
+<br>09057077509 / 09187261414
+<br>raphdumape@yahoo.com
+</p>
+</div>
+
+</div>
+<div class="social col-lg-5 col-lg-push-1">
+<h1 style="font-family:Calibri; font-size:19px; color:white;">Social Networking Links</h1>
+<br>
+<a href="https://www.facebook.com/raph.dumape"> <img src="/img/fb.jpg" style="border:3px solid #545565;"> </a>
+<a href="https://twitter.com/RaphDumape18"> <img src="/img/twitter.jpg" style="border:3px solid #545565;"> </a>
+<a href="http://www.codecademy.com/RaphDumape"> <img src="/img/code.jpg"style="border:3px solid #545565;"> </a>
+<a href="https://github.com/raphdumape"> <img src="/img/github.jpg"style="border:3px solid #545565;"> </a>
+</div>
+
+<div class="aboutme col-lg-5 col-lg-push-2">
+	<h1 style="font-family:Calibri; font-size:19px; color:white">About Me</h1>
+<p style="font-family:Calibri; font-size:18px; color:white">Hello, Welcome to my simple profile page! My name is <strong>Raph</strong> and I am a fifth year Computer Engineering student. I love to play basketball at the same time watching it. A big fan of James Yap and Kobe Bryant. A promising SONGER, a good LEADER and a family-oriented person. </p>
+</div>
+</div>
+
+<div class="clear"></div>
+<div class="grid_12">
+  <div class="grid_8 push">
+ <center><form action="/sign2?guestbook_name={{ guestbook_name }}" method="post">
+      <div><textarea name="content" rows="3" cols="53"></textarea></div>
+      <div><input type="submit" value="Sign in to Raph's Guestbook"  style="padding: 10px 10px 10px;
+              font-size: 12px;
+              font-style: Verdana;
+              background-color:orange;
+              color: #ffffff;
+              border-radius: 8px;"></div>
+    </form></center>
+   
+    <center><a class="login" href="https://www.google.com/accounts/ServiceLogin?service=ah&passive=true&continue=https://appengine.google.com/_ah/conflogin%3Fcontinue%3Dhttp://www.coe2043-team-18.appspot.com/module-1/2%253Fguestbook_name%253Ddefault_guestbook&ltmpl=gm&shdf=CiELEgZhaG5hbWUaFUFkdmFuY2UgV2ViIENvbXB1dGluZwwSAmFoIhSuaPwTqNtf3A9oxH55kVqHcpT62CgBMhRDN9m26gQ9ZFbUQjNv4Yf3nsazeg">Login Your Account</a></center>
+    {% for greeting in greetings %}
+      {% if greeting.author %}
+        <b>{{ greeting.author.nickname() }}</b> wrote:
+      {% else %}
+       <p style="font-family:Calibri; color:white">An <strong>anonymous person</strong> wrote:<p>
+      {% endif %}
+      <blockquote>{{ greeting.content }}</blockquote>
+    {% endfor %}
+
+    
+
+    <hr>
+
+</div>
+</div>
+</div>
+{% else %}
+  <div class="navbar navbar-inverse navbar-fixed-top"> 
+  <div class="container">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-
+target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+  <div class="navbar-collapse collapse" id="navbar-main">
+    <ul class="nav navbar-nav">
+      <li><a class="nav navbar-nav" href="/">Thesis Manager</a></li>
+
+      <li class="drop2"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Advisers
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/adviser/new">Create</a></li>
+      <li><a href="/adviser/list">View All</a></li>
+      </ul>
+      </li>
+
+      <li class="drop3"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Students
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/student/new">Create</a></li>
+      <li><a href="/student/list">View All</a></li>
+      </ul>
+      </li>
+
+      <li class="drop4"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Theses
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/thesis/new">Create</a></li>
+      <li><a href="/thesis/list">View All</a></li>
+      </ul>
+      </li>
+    
+
+    <li class="drop5"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer's Profile
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+      <li><a href="/module-1/1"><img src="/img/kel.jpg" width="25px" height="25px" />Mark Kelvin Mojagan</a></li>
+      <li><a href="/module-1/2"><img src="/img/paeng.jpg" width="25px" height="25px" />Raph Dumape</a></li>
+      </ul>
+      </li>
+    </ul>
+    </div>
+    </div>
+  </div>
+  <div class="container">
+  <div class="bs-docs-section">
+      <div class="row">
+      <div class="col-lg-12">
+        <div class="bs-component">
+        <div class="jumbotron"><center>
+         <img src="/img/login.png" />
+         <h2> Click <a href="{{ url|safe }}"><span data-title="here">here</span></a> to login</h2>  
+</div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  {% endif %}
+  </body>
+</html>
+{% endautoescape %}
